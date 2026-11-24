@@ -1,0 +1,30 @@
+# Environment
+.env
+.env.*
+!.env.example
+!src/laravel-app/.env.example
+
+# Dependencies
+**/vendor/
+**/node_modules/
+
+# Laravel generated files
+**/storage/logs/*
+**/bootstrap/cache/*.php
+**/public/build/
+**/public/hot
+
+# SQLite database
+*.sqlite
+*.sqlite3
+
+# Go binaries
+src/go-backend/go-backend
+src/go-backend/go-backend.exe
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
