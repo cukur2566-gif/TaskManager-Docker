@@ -1,4 +1,3 @@
-# ---------- Stage 1: build static Go binary ----------
 FROM golang:1.27-alpine AS builder
 WORKDIR /app
 COPY go.mod ./
@@ -6,7 +5,6 @@ RUN go mod download
 COPY main.go ./
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o go-backend .
 
-# ---------- Stage 2: minimal runtime ----------
 FROM alpine:3.22
 WORKDIR /app
 COPY --from=builder /app/go-backend .
